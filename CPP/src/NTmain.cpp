@@ -45,7 +45,7 @@ void printDiagram(vector<pair<double, double> > diagram, string file){
 }
 
 // Compute Persistent Diagrams and write the results to outputFolder
-void printPersistentDiagramsWithDiameter(vector<string> files, string outputFolder){
+void printPersistentDiagrams(vector<string> files, string outputFolder){
 	unsigned int fileNum = files.size();
 	std::string fileName, fileResult = "data/dummyFile.txt";
 	double delta;
@@ -86,8 +86,8 @@ void printPersistentDiagramsWithDiameter(vector<string> files, string outputFold
 		vector<pair<double, double> > diagram =ga.getPersistentDiagram();
 
 		//add diameter to persistent diagram
-		double diameter = computeEuclideanDiameter(fileName);
-		diagram.push_back(::make_pair(0, diameter));
+		//double diameter = computeEuclideanDiameter(fileName);
+		//diagram.push_back(::make_pair(0, diameter));
 
 
 		printDiagram(diagram, outputFolder+extractFileName(fileName));
@@ -99,7 +99,7 @@ void getPersistentDiagrams(string filePath, string outputFolder){
 	vector<string> files;
 	getFiles(filePath, "swc", files);
 	vector<string> filesFixIndex = getFixIndexFiles(files);
-	printPersistentDiagramsWithDiameter(filesFixIndex, outputFolder);
+	printPersistentDiagrams(filesFixIndex, outputFolder);
 }
 
 int main(int argc, char **argv){ // testing
@@ -109,5 +109,8 @@ int main(int argc, char **argv){ // testing
 	}
 	string inputFolder(argv[1]);
 	string outputFolder(argv[2]);
+	if(outputFolder.find_last_of('/') != outputFolder.size() - 1){
+		outputFolder += '/';
+	}
 	getPersistentDiagrams(inputFolder, outputFolder);
 }
