@@ -197,6 +197,7 @@ public:
 	void sampleBasePoints(string filename);		//sample from file
 	void sampleBasePoints();		//random sample
 	void sampleBasePointsWODeg2();		//random sample without degree-2 vertices
+	void sampleBasePointCustom(int b); // -- yanjie 12/21/2016
 	vector<int> computeNeighborInRange(int base);
 	//collect basic info for computing persistence diagrams
 	void heightFunc(int base);

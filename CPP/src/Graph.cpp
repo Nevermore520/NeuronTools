@@ -1025,8 +1025,8 @@ double Graph::getDistToDiagnalSum(){
 void  Graph::preparePersistentDiagram(){
 	this->computeDiameter();
 	// TODO here only need sample one base point. Input from file. Use sampleBasePoints(String filename)
-	string t = "data/basePoint.txt";
-	this->sampleBasePoints(t);
+	//string t = "data/basePoint.txt";
+	this->sampleBasePointCustom(0);
 	//compute shortest distance for all sample points
 	this->computeShortestDistanceDj();
 	//clear vDiagram
@@ -1741,6 +1741,7 @@ void Graph::sampleBasePoints(string filename)
 	ifs >> num;
 	while (num--)
 	{
+		cout << "in sample base points" << endl;
 		ifs >> index;
 		this->sampleBP.push_back(index);
 		this->mSampleIndicies[index] = this->sampleBP.size() - 1;
@@ -1748,6 +1749,14 @@ void Graph::sampleBasePoints(string filename)
 	cout << "base point size: " << this->sampleBP.size() << endl;
 	ifs.close();
 	ifs.clear();
+}
+
+void Graph::sampleBasePointCustom(int b)
+{
+	this->sampleBP.clear();
+	this->mSampleIndicies.clear();
+	this->sampleBP.push_back(b);
+	this->mSampleIndicies[b] = this->sampleBP.size() - 1;
 }
 
 void Graph::computeShortestDistanceDj()
