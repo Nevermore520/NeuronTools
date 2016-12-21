@@ -47,12 +47,12 @@ void printDiagram(vector<pair<double, double> > diagram, string file){
 // Compute Persistent Diagrams and write the results to outputFolder
 void printPersistentDiagramsWithDiameter(vector<string> files, string outputFolder){
 	unsigned int fileNum = files.size();
-	std::string fileName;
+	std::string fileName, fileResult = "data/dummyFile.txt";
 	double delta;
 	vector<Point3D> vP;
 	for(size_t i=0;i<fileNum;i++){
 		fileName = files[i];
-		//cout<<"process "<< i<<": "<< fileName << endl;
+		cout<<"process "<< i<<": "<< fileName << endl;
 		delta = 0.1;
 		std::ifstream ifs;
 		double x, y, z;
@@ -99,7 +99,6 @@ void getPersistentDiagrams(string filePath, string outputFolder){
 	vector<string> files;
 	getFiles(filePath, "swc", files);
 	vector<string> filesFixIndex = getFixIndexFiles(files);
-	cout << filesFixIndex.size() << endl;
 	printPersistentDiagramsWithDiameter(filesFixIndex, outputFolder);
 }
 
@@ -108,11 +107,7 @@ int main(int argc, char **argv){ // testing
 		cout << "usage: PDmain <input folder name> <output folder name>" << endl;
 		return 0;
 	}
-	cout << "start..."<< endl;
 	string inputFolder(argv[1]);
 	string outputFolder(argv[2]);
-	cout << inputFolder << endl;
-	cout << outputFolder << endl;
 	getPersistentDiagrams(inputFolder, outputFolder);
-	cout << "finish..."<< endl;
 }

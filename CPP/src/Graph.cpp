@@ -1026,12 +1026,7 @@ void  Graph::preparePersistentDiagram(){
 	this->computeDiameter();
 	// TODO here only need sample one base point. Input from file. Use sampleBasePoints(String filename)
 	string t = "data/basePoint.txt";
-	// do sample base point
-	//this->sampleBasePoints(t);
-	this->sampleBP.clear();
-	this->sampleBP.push_back(0);
-//	cout << "base point size: " << this->sampleBP.size() << endl;
-//	cout << "base point index: " << this->sampleBP[0] << endl;
+	this->sampleBasePoints(t);
 	//compute shortest distance for all sample points
 	this->computeShortestDistanceDj();
 	//clear vDiagram
@@ -1750,6 +1745,7 @@ void Graph::sampleBasePoints(string filename)
 		this->sampleBP.push_back(index);
 		this->mSampleIndicies[index] = this->sampleBP.size() - 1;
 	}
+	cout << "base point size: " << this->sampleBP.size() << endl;
 	ifs.close();
 	ifs.clear();
 }

@@ -15,19 +15,27 @@ void getFiles( string path, string exd, vector<string>& files )
 	struct _finddata_t fileinfo;
 	string pathName, exdName;
 
-	if (0 != strcmp(exd.c_str(), "")){
+	if (0 != strcmp(exd.c_str(), ""))
+	{
 		exdName = "\\*." + exd;
-	}else{
+	}
+	else
+	{
 		exdName = "\\*";
 	}
 
-	if((hFile = _findfirst(pathName.assign(path).append(exdName).c_str(),&fileinfo)) !=  -1){
-		do{
+	if((hFile = _findfirst(pathName.assign(path).append(exdName).c_str(),&fileinfo)) !=  -1)
+	{
+		do
+		{
 
-			if((fileinfo.attrib &  _A_SUBDIR)){
+			if((fileinfo.attrib &  _A_SUBDIR))
+			{
 				if(strcmp(fileinfo.name,".") != 0  &&  strcmp(fileinfo.name,"..") != 0)
 					getFiles( pathName.assign(path).append("\\").append(fileinfo.name), exd, files );
-			}else{
+			}
+			else
+			{
 				if(strcmp(fileinfo.name,".") != 0  &&  strcmp(fileinfo.name,"..") != 0)
 					files.push_back(pathName.assign(path).append("\\").append(fileinfo.name));
 			}
