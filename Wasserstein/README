@@ -1,3 +1,5 @@
+This is a great tool to compute Wasserstein distance. For updated version, please check their repository: https://bitbucket.org/grey_narn/geom_matching
+
 This is a program for computing Wasserstein distances between persistence 
 diagrams using the geometric version of auction algorithm.
 
