@@ -1,0 +1,5 @@
+The zip files in this folder is for project setup in Eclipse.
+The Java and C++ code should be the same as those in JAVA/src/ and CPP/src/ under NeuronTools.
+Import these two files into Eclipse and replace the code with the code in JAVA/src/ and CPP/src/.
+
+under construction...
