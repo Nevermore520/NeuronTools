@@ -1,5 +1,3 @@
-<snippet>
-  <content><![CDATA[
 # ${1:NeuronTools}
 
 This repository contains all tools I used to perform data testing on neuron cells.
@@ -13,6 +11,3 @@ The wasserstein/ folder contains code to compute Persistent Distance Matrix from
 
 Still under contruction...
 
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
