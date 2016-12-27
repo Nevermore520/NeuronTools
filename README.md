@@ -17,7 +17,7 @@ Look here for how to install Eclipse for Java in Windows: https://www.ntu.edu.sg
 ### Eclipse for CPP
 Look here for how to install MinGW and Eclipse for CPP in Windows: https://www3.ntu.edu.sg/home/ehchua/programming/howto/EclipseCpp_HowTo.html
 Also the C++ code need Boost C++ library, which can be downloaded here: http://www.boost.org/
-After installing Eclipse for C++ and the Boost library, for a quick start to setup the CPP project, follow steps below:
+#### After installing Eclipse for C++ and the Boost library, for a quick start to setup the CPP project, follow steps below:
 1. Open Eclipse for CPP, click File->New->C++ Project, enter project name as NeuronTools, select 'Hello World C++ Project' under Project type and select 'MinGW GCC' under Toolchains, and click Finish.
 2. Replace files in the src folder under the newly created NeuronTools project with files in NeuronTools/CPP/src/ (https://github.com/Nevermore520/NeuronTools/tree/master/CPP/src)
 3. Before running the code, make sure the boost path is added to your includes list. In Eclipse, click Project->Properties, click Settings under 'C/C++ Build', click Tool Settings tab, and add your Boost library install path(e.g. C:\software\boost_1_59_0) to the 'Include path (-I)' in 'GCC C++ Compiler/Includes'. Also add this path in 'GCC C Compiler/Includes'.
