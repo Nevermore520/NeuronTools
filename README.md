@@ -10,7 +10,7 @@ The CPP/src folder contains code to compute Persistent Diagrams from those files
 I build the tools in above Java and CPP directories in Windows using Eclipse. 
 ### Eclipse for Java
 Look here for how to install Eclipse for Java in Windows: https://www.ntu.edu.sg/home/ehchua/programming/howto/EclipseJava_HowTo.html
-For a quick start to setup the Java project, follow steps below:
+#### For a quick start to setup the Java project, follow steps below:
 1. Open Eclipse, click File->New->Java Project, enter project name as FileCreatorInJava, then click Finish. 
 2. Download all Java files in NeuronTools/Java/src/ (https://github.com/Nevermore520/NeuronTools/tree/master/Java/src), copy and paste them into the src folder under the newly created FileCreatorInJava project.
 3. The code is ready to run and test in Eclipse.
