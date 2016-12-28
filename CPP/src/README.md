@@ -1,4 +1,4 @@
-The CPP code here needs Boost C++ Library. Refer to README file in NeuronTools(https://github.com/Nevermore520/NeuronTools) for details.
+The CPP code here needs Boost C++ Library. Refer to README file in NeuronTools(https://github.com/Nevermore520/NeuronTools) for details on how to run this code and provide arguments in Eclipse.
 
 # usage
 The main function is in NTmain.cpp <br/>
