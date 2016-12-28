@@ -24,6 +24,14 @@ To use a standalone command-line utility wasserstein_dist:
 
 See also code in wasserstein/example/wasserstein_dist.cpp.
 
+## Input File Format
+Check here(https://github.com/Nevermore520/NeuronTools/blob/master/CPP/src/README.md) for the output file format, which is used as input file by this code.
+
+## Output File Format
+There is one output file for this program.<br/>
+The first line contains two numbers D and D specifying the dimension of the distance matrix.<br/>
+The following D lines each contains D number, and they work as the distance matrix.
+
 # License
 
 See wasserstein/license.txt
