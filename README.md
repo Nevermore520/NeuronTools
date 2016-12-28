@@ -25,6 +25,10 @@ I build the tools in above Java and CPP directories in Windows using Eclipse.
 5. Before running the code, make sure the boost path is added to your includes list. In Eclipse, click Project->Properties, click Settings under 'C/C++ Build', click Tool Settings tab, and add your Boost library install path(e.g. C:\software\boost_1_59_0) to the 'Include path (-I)' in 'GCC C++ Compiler/Includes'. Also add this path in 'GCC C Compiler/Includes'.
 6. Now the code is ready to run and test.
 
+### Build and Run Programs in Eclipse
+1. In Eclipse, open project you have created in the above steps, click Run->Run Configurations..., select either C/C++ Application or Java Application according to your languages, right click->New. 
+2. In the newly created configuration, select the Arguments tab, enter your program arguments, and click Run.
+
 ## Wasserstein
 The wasserstein/ folder contains code to compute Persistent Distance Matrix from Persistent Diagrams computed by code in CPP/src/.
 Refer to the included readme file for how to build and run the code under linux.
