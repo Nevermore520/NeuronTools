@@ -20,7 +20,7 @@ Your compiler must support C++11.
 
 To use a standalone command-line utility wasserstein_dist:
 
-wasserstein_dist distance_diagrams_path output_distance_matrix_file_path
+`wasserstein_dist distance_diagrams_path output_distance_matrix_file_path`
 
 See also code in wasserstein/example/wasserstein_dist.cpp.
 
