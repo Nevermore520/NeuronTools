@@ -3,7 +3,7 @@
 This repository contains all tools I used to perform data testing on neuron cell data.
 
 ## Java/src
-The Java/src/ folder contains code to transform original swc files to new files, which has different file format, which can be used to compute Persistent Diagrams by using code in CPP/src/
+The Java/src/ folder contains code to transform original swc files to new files, which has different file format. The new files can be used to compute Persistent Diagrams by using code in CPP/src/
 
 ## CPP/src
 The CPP/src folder contains code to compute Persistent Diagrams from those files prepared by code in Java/src/.
