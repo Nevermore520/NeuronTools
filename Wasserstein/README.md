@@ -36,9 +36,9 @@ to compute the distance between two diagrams in txt files.
 
 On Linux/Mac:
 
-mkdir build
-cd build
-cmake ..
+mkdir build <br/>
+cd build <br/>
+cmake .. <br/>
 make
 
 On Windows (checked with Visual Studio 2015, Community version)
