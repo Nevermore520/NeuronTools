@@ -14,7 +14,7 @@ The thrid one is a number specifying which function to use when transfering file
 Check the file format here: http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html
 
 ## Output file format
-Encoding:  ASCII text
+Encoding:  ASCII text<br/>
 First line contains two numbers N and E, specifying how many nodes and how many edges in the result graph, which is a tree.<br/>
 The following N lines each contains three floating point number specifying position of each node.<br/>
 And the following E lines each contains two integer and one floating point number specifying node ID and distance between the two nodes.
