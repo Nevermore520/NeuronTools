@@ -27,6 +27,7 @@ I build the tools in above Java and CPP directories in Windows using Eclipse.
 
 ## Wasserstein
 The wasserstein/ folder contains code to compute Persistent Distance Matrix from Persistent Diagrams computed by code in CPP/src/.
+Refer to the included readme file for how to build and run the code under linux.
 
 Still under contruction...
 
