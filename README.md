@@ -3,7 +3,7 @@
 This repository contains all tools I used to perform data testing on neuron cell data.
 
 ## Example Workflow
-![alt tag](https://github.com/Nevermore520/NeuronTools/blob/master/NeuronTools_workflow.png)
+![alt tag](https://github.com/Nevermore520/NeuronTools/blob/master/img/NeuronTools_workflow.png)
 
 ## Java/src
 The Java/src/ folder contains code to transform original swc files to new files, which has different file format. The new files can be used to compute Persistent Diagrams by using code in CPP/src/
