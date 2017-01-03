@@ -15,7 +15,7 @@ Generate distance matrix file (run in Linux)<br/>
 ## Descriptor functions
 The FTMain.jar has three arguments, and the 3rd one is the discriptor function.
 | number        | discriptor function   |
-| ------------- |:---------------------:|
+| ------------- |----------------------:|
 | 0             | geodesic distance     |
 | 1             | geodesic+straight line|
 | 2             | Volume weighted       |
