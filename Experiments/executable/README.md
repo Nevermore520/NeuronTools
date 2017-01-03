@@ -6,7 +6,7 @@
 
 ## Example command line
 Change file format for all input swc files (run in Windows) <br/>
-`java -jar FTMain.jar ..\data\data_127 ..\data\output` <br/>
+`java -jar FTMain.jar ..\data\data_127 ..\data\output 0` <br/>
 Generate persistence diagram files (run in Windows) <br/>
 `NTMain.exe ..\data\output ..\data\pd` <br/>
 Generate distance matrix file (run in Linux)<br/>
