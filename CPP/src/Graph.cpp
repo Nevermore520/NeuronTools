@@ -1026,7 +1026,7 @@ void  Graph::preparePersistentDiagram(){
 	this->computeDiameter();
 	// TODO here only need sample one base point. Input from file. Use sampleBasePoints(String filename)
 	//string t = "data/basePoint.txt";
-	this->sampleBasePointCustom(0);
+	//this->sampleBasePointCustom(0); // no better than original
 	//compute shortest distance for all sample points
 	this->computeShortestDistanceDj();
 	//clear vDiagram
