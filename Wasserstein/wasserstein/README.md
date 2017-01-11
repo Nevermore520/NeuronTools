@@ -18,7 +18,7 @@ Your compiler must support C++11.
 
 # Usage:
 
-To use a standalone command-line utility wasserstein_dist:
+To use a standalone command-line utility wasserstein_dist from Linux system:
 
 `wasserstein_dist distance_diagrams_path output_distance_matrix_file_path`
 
