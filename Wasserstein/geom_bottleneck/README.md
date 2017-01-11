@@ -12,7 +12,7 @@ Your compiler must support C++11.
 
 # Usage:
 
-To use a standalone command-line utility bottleneck_dist:
+To use a standalone command-line utility bottleneck_dist from Linux system:
 
 `bottleneck_dist path_to_persistence_diagrams_folder path_to_output_distance_matrix_file` 
 
