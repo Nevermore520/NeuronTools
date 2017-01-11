@@ -8,7 +8,7 @@
 Change file format for all input swc files (run in Windows) <br/>
 `java -jar FTMain.jar ..\data\data_127 ..\data\output 0` <br/>
 Generate distance matrix file from vectorized Persistent Diagrams(run in Windows)<br/>
-`NTMain_vectorization ../data/pd ../data/dist_mat.txt 100`
+`NTMain_vectorization ../data/pd ../data/dist_mat.txt 100` <br/>
 OR <br/>
 Generate persistence diagram files (run in Windows) <br/>
 `NTMain.exe ..\data\output ..\data\pd` <br/>
