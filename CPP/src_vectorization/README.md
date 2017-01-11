@@ -13,4 +13,4 @@ Check [here](https://github.com/Nevermore520/NeuronTools/blob/master/Java/src/RE
 ## Output File format
 Encoding: ASCII text<br/>
 First line contains 2 number specify the size of the distance matrix.
-The rest file is a M by M matrix, which is the distance matrix.
+The rest file is an M by M matrix, which is the distance matrix.
