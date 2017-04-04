@@ -52,19 +52,25 @@ Below are plots of vectorized persistent diagrams. The green line in each plot r
 
 # Pairwise Distance
 Below are three distance measures among those three trees.
-## Wasserstein distance among persistent diagrams
+
+<b> Wasserstein distance among persistent diagrams</b>
+
 |         | Tree 1 | Tree 2 | Tree 3   |
 | ------- | ------:|-------:|---------:|
 | Tree 1  | 0.0    | 2.47   | 0.015    |
 | Tree 2  | 2.47   | 0.0    | 2.49     |
 | Tree 3  | 0.015  | 2.49   |  0.0     |
-## Bottleneck distance among persistent diagrams
+
+<b> Bottleneck distance among persistent diagrams</b> 
+
 |         | Tree 1 | Tree 2 | Tree 3   |
 | ------- | ------:|-------:|---------:|
 | Tree 1  | 0.0    | 1.5    | 0.007    |
 | Tree 2  | 1.5    | 0.0    | 1.5      |
 | Tree 3  | 0.007  | 1.5    |  0.0     |
-## Euclidean distance among vectorized persistent diagrams
+
+<b> Euclidean distance among vectorized persistent diagrams</b> 
+
 |         | Tree 1 | Tree 2 | Tree 3   |
 | ------- | ------:|-------:|---------:|
 | Tree 1  | 0.0    | 42.59  | 0.3      |
