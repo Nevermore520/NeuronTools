@@ -139,6 +139,6 @@ int main(int argc, char **argv){ // testing
 	if(argc == 5){
 		range = atof(argv[4]);
 	}
-	double Sigma = 30;
+	double Sigma = 40;
 	getVectorizedPersistDiagDistanceMatrixFixIndex(inputFolder, outputFile, vectorSize, range, Sigma);
 }

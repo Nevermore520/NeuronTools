@@ -1098,8 +1098,9 @@ vector< double > Graph::getPersisDiagFunGaussianVector(int vectLen, double sigma
 	for(double pos = lowBound; pos <= upBound; pos+=interval){
 		double funValue = 0;
 		for(int i = 0; i < this->iH0; i++){
-			double alpha = this->Dg[i].second;
+			double alpha = fabs(this->Dg[i].second - this->Dg[i].first);
 			double Mu = this->Dg[i].first;
+			// double Mu = (this->Dg[i].first + this->Dg[i].second) / 2;
 			double dist = Mu-pos;
 			funValue += alpha*exp(-(dist*dist) / sigma);
 		}
