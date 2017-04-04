@@ -17,5 +17,3 @@ Below are three manually created neuron trees.
   <b>Neuron Tree 3</b><br>
 </p>
 
-![alt tag](https://github.com/Nevermore520/NeuronTools/blob/master/Example/tree%20plots/swc_with_func_val_T3.png)
-
