@@ -20,7 +20,7 @@ Below are three manually created neuron trees. They are created in two dimensona
 ![alt tag](https://github.com/Nevermore520/NeuronTools/blob/master/Example/tree%20plots/swc_with_func_val_T3.png)
 
 # Persistent Diagrams
-Below are persistent diagrams of those three neuron trees. These diagrams are computed based on the euclidean distance shown in the plots above, which works as function values inside each tree. Note that tree 2 and tree 3 have some same points as tree 1, and they have their own points near the diagonal y = x. This is caused by the perturbation of tree 2 and tree 3 from tree 1.
+Below are persistent diagrams of those three neuron trees. These diagrams are computed based on the euclidean distance shown in the plots above, which works as function values inside each tree. Note that Tree 2 and Tree 3 have some same points as Tree 1, and they have their own points near the diagonal y = x. This is caused by the perturbation of Tree 2 and Tree 3 from Tree 1.
 <p align="center">
   <b>Persistent Diagram of Neuron Tree 1</b><br>
 </p>
@@ -38,7 +38,7 @@ Below are persistent diagrams of those three neuron trees. These diagrams are co
 ![alt tag](https://github.com/Nevermore520/NeuronTools/blob/master/Example/persistent%20diagrams/persistent_diagram_T3.png)
 
 # Vectorized Persistent Diagrams
-Below are plots of vectorized persistent diagrams. The green line in each plot represents vectorized persistent diagram of Tree 1 and red one represent that of Tree 2 and Tree 3 in each plot. Note that the vectors from Tree 1 and Tree 3 are closer to each other than that of Tree 1 and Tree2. 
+Below are plots of vectorized persistent diagrams. The green line in each plot represents vectorized persistent diagram of Tree 1. The red line represents that vectorized persistent diagrams of Tree 2 and Tree 3 in each plot. Note that the vectors from Tree 1 and Tree 3 are closer to each other than that of Tree 1 and Tree 2. 
 <p align="center">
   <b>Vectorized Persistent Diagrams of Neuron Tree 1 and Tree 2</b><br>
 </p>
