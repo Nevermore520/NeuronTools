@@ -20,7 +20,7 @@ Below are three manually created neuron trees. They are created in two dimensona
 ![alt tag](https://github.com/Nevermore520/NeuronTools/blob/master/Example/tree%20plots/swc_with_func_val_T3.png)
 
 # Persistent Diagrams
-Below are persistent diagrams of those three neuron trees. These diagrams are computed based on the euclidean distance shown in the plots above, which works as function values inside each trees. Note that tree 2 and tree 3 have some same points as tree 1, and they have their own points near the diagonal y = x. This is caused by the perturbation of tree 2 and tree 3 from tree 1.
+Below are persistent diagrams of those three neuron trees. These diagrams are computed based on the euclidean distance shown in the plots above, which works as function values inside each tree. Note that tree 2 and tree 3 have some same points as tree 1, and they have their own points near the diagonal y = x. This is caused by the perturbation of tree 2 and tree 3 from tree 1.
 <p align="center">
   <b>Persistent Diagram of Neuron Tree 1</b><br>
 </p>
