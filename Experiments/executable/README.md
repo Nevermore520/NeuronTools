@@ -23,6 +23,8 @@ The FTMain.jar has three arguments, and the 3rd one is the discriptor function.
 | 1             | geodesic+straight line     |
 | 2             | Volume weighted            |
 | 3             | Euclidean distance function|
+| 4             | Density count function     |
+| 5             | y-coordinate function      |
 
 If customized function is needed, please use NTMain_with_func_value.exe directly. The input file format can be found [here](https://github.com/Nevermore520/NeuronTools/tree/master/CPP/src_with_func_value#input-file-format).
 
