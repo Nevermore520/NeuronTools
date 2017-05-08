@@ -20,11 +20,13 @@ Encoding:  ASCII text<br/>
 First line contains two numbers N and E, specifying how many nodes and how many edges in the result graph, which is a tree.<br/>
 The following N lines each contains three floating point number specifying position of each node.<br/>
 And the following E lines each contains two integer and one floating point number specifying two node IDs and distance between the two nodes.
+This output format does not include function values for each node.
 ### For function type 3, 5
 First line contains two numbers N and E, specifying how many nodes and how many edges in the result graph, which is a tree.<br/>
 The following N lines each contains three floating point number specifying position of each node.<br/>
 The following E lines each contains two integer specifying two node IDs, which means these two nodes are connected. <br/>
 And the following N lines each contains one number specifying the function value for that node. The node order in this part is the same as it in the first part above.
+This output format include function values for each node.
 ### For function type 4
 First line contains one number N, specifying the total number of lines below.
 The following N lines each contains two numbers, one floating point number specifying distance to root node, and one integer specifying the total edge count at that distance.
