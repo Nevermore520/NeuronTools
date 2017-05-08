@@ -23,7 +23,8 @@ public class IndexFileCreater {
 		String outputAbsPath = "data/rec-data-ChCs_area_layer_axon/index_file/rec-data-ChCs_area_layer_axon_index_justin.txt";
 		//TODO change function if using Justin's code
 		//printIndexFileAbsolutePath(fileNames,outputAbsPath);
-		printIndexFileFitJustinPath(fileNames,outputAbsPath);
+		String extension = ".ASC.swc";
+		printIndexFileFitJustinPath(fileNames,outputAbsPath, extension);
 	}
 	
 	private static void printIndexFile(List<String> fileNames,String output) throws FileNotFoundException, UnsupportedEncodingException{
@@ -67,12 +68,11 @@ public class IndexFileCreater {
 		return prefix;
 	}
 	
-	private static void printIndexFileFitJustinPath(List<String> fileNames,String output) throws FileNotFoundException, UnsupportedEncodingException{
+	private static void printIndexFileFitJustinPath(List<String> fileNames,String output, String extension) throws FileNotFoundException, UnsupportedEncodingException{
 		PrintWriter writer = new PrintWriter(output, "UTF-8");
 		String flag = "Original_data";
 		String commonPrefix = getLongestCommonPrefix(fileNames);
 		System.out.println(commonPrefix);
-		String extension = ".ASC.swc";
 		for(int i=0;i<fileNames.size();i++){
 			String name = fileNames.get(i);
 			// name = name.substring(name.indexOf(flag)+flag.length()+1);
