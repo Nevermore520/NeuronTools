@@ -1,21 +1,15 @@
 
-public class EuclideanFuncValFileTransfer extends FileTransfer{
+public class YCoordinateFuncValFileTransfer extends FileTransfer{
 	private TreeNode currentRoot;
-	public EuclideanFuncValFileTransfer(String inputFile){
+	public YCoordinateFuncValFileTransfer(String inputFile){
 		this.inputFile = inputFile;
 		currentRoot = null;
 	}
-
-	/**
-	 * Compute the Euclidean distance between tree nodes
-	 * @param root
-	 * @param parentNode
-	 */
 	@Override
 	protected void DFS(TreeNode root, TreeNode parentNode, double distance) {
 		// TODO Auto-generated method stub
 		if(parentNode==null){
-			root.setDistance(0);
+			root.setDistance(root.getVal().y);
 			this.currentRoot = root;
 			for(TreeNode child: root.getChildren()){
 				DFS(child, root, distance);
@@ -23,14 +17,14 @@ public class EuclideanFuncValFileTransfer extends FileTransfer{
 		}else{
 			if(root.childrenNum()==0){ // leaf node
 				root.setParentNode(parentNode);
-				root.setDistance(root.getVal().computeDistance(this.currentRoot.getVal()));
+				root.setDistance(root.getVal().y);
 			}else if(root.childrenNum()==1){ // edge point
 				for(TreeNode child: root.getChildren()){
 					DFS(child,parentNode, distance);
 				}
 			}else{ // tree node
 				root.setParentNode(parentNode);
-				root.setDistance( root.getVal().computeDistance(this.currentRoot.getVal()));
+				root.setDistance(root.getVal().y);
 				for(TreeNode child: root.getChildren()){
 					DFS(child, root, distance);
 				}

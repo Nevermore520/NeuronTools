@@ -153,7 +153,7 @@ public abstract class FileTransfer {
 		List<List<Float>> points = new ArrayList<List<Float>>();
 		List<List<Integer>> connectivity = new ArrayList<List<Integer>>();
 		List<Double> distance = new ArrayList<Double>();
-		distance.add(0.0); // The function value of root node is 0.
+		distance.add(root.getDistance()); // The function value of root node is 0.
 		INDEX = 0;
 		BuildData(points, connectivity, distance, root);
 		

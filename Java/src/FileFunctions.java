@@ -60,23 +60,57 @@ public class FileFunctions {
 		//String NNCfile = "data/Giorgio_trees reclassed version/output_KNN/dBSum_deltaLinfty_combSum_1NN.txt";
 		//String resultFile = "data/Giorgio_trees reclassed version/classifyResult.txt";
 		
-		//String fileFolder = "data/Zhao_trees/all_cells";
-		//String NNCfile = "data/Zhao_trees/wasserstein_KNN/zhao_379_9NN.txt";
-		//String resultFile = "data/Zhao_trees/wasserstein_KNN/classifyResult_density.txt";
+//		String fileFolder = "data/Zhao_trees/all_cells";
+//		String NNCfile = "data/Zhao_trees/wasserstein_KNN/wasserstein_NNC_10NN.txt";
+//		String resultFile = "data/Zhao_trees/wasserstein_KNN/classifyResult_density.txt";
+//		String fileFolder = "data/Zhao_trees/all_cells";
+//		String NNCfile = "data/Zhao_trees/output/vect_dist_midXY_paper_test_sigma80_5NN.txt";
+//		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
+//		int classNameDepth = 4;
+//		String fileFolder = "data/FourClassDataHippoBreak/";
+//		String NNCfile = "data/FourClassHippoBreakOutput/output_KNN/vect_dist_midXY_paper_test_sigma80_5NN.txt";
+//		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
+//		int classNameDepth = 3;
+//		String fileFolder = "data/Giorgio_1268_inter_principal/all_cells/";
+//		String NNCfile = "data/Giorgio_1268_inter_principal/output/vect_dist_midXY_paper_test_sigma80_5NN.txt";
+//		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
+//		int classNameDepth = 4;
 		//String fileFolder = "data/Giorgio_1268_inter_principal/all_cells";
 		//String NNCfile = "data/Giorgio_1268_inter_principal/wasserstein_KNN/giorgio_1268_inter_principal_10NN.txt";
 		//String resultFile = "data/Giorgio_1268_inter_principal/wasserstein_KNN/classifyResult_density.txt";
-		String fileFolder = "data/FourClassDataHippoBreak/";
-		String NNCfile = "data/FourClassHippoBreakOutput/wasserstein_KNN/giorgio_127_10NN.txt";
-		String resultFile = "data/FourClassHippoBreakOutput/wasserstein_KNN/classifyResult_density.txt";
-		FileFunctions.validateSameDirectory(fileFolder, NNCfile, resultFile);
+		//String fileFolder = "data/FourClassDataHippoBreak/";
+		//String NNCfile = "data/FourClassHippoBreakOutput/wasserstein_KNN/giorgio_127_10NN.txt";
+		//String resultFile = "data/FourClassHippoBreakOutput/wasserstein_KNN/classifyResult_density.txt";
+//		String fileFolder = "data/Zhao_trees/all_cells";
+//		String NNCfile = "data/Zhao_trees/output/vect_dist_euclidean_L1_with_V2_sigma10_5NN.txt";
+//		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
+//		int classNameDepth = 4;
+//		String fileFolder = "data/FourClassDataHippoBreak/";
+//		String NNCfile = "data/FourClassHippoBreakOutput/output_KNN/vect_dist_euclidean_L1_sigma10_5NN.txt";
+//		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
+//		int classNameDepth = 3;
+		String fileFolder = "data/Giorgio_1268_inter_principal/all_cells/";
+		String NNCfile = "data/Giorgio_1268_inter_principal/output/vect_dist_euclidean_L1_sigma10_5NN.txt";
+		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
+		int classNameDepth = 4;
+		FileFunctions.validateSameDirectory(fileFolder, NNCfile, resultFile, classNameDepth);
 		//String outputFolder = "data/Zhao_trees/NearestTreeFolder/";
 		//copyNearestNeighborFile(fileFolder, NNCfile, outputFolder);
 		//findNearestNeighborName(fileFolder, NNCfile, "28650283.swc");
 		//CompareClassifyResults("data/Zhao_trees/output/classifyResult_persistance.txt","data/Zhao_trees/output/classifyResult_density.txt");
 	}
 	
-	public static void validateSameDirectory(String fileFolder, String input, String output) throws FileNotFoundException, UnsupportedEncodingException{
+	public static int kthIndexOf(String s, char c, int k){
+		for(int i = 0; i < s.length(); i++){
+			if(s.charAt(i) == c){
+				if(k == 1) return i;
+				else k--;
+			}
+		}
+		return -1;
+	}
+	
+	public static void validateSameDirectory(String fileFolder, String input, String output, int classNameDepth) throws FileNotFoundException, UnsupportedEncodingException{
 		List<String> fileNames = new LinkedList<String>();
 		final File folder = new File(fileFolder);
 		FileFunctions.listFilesForFolder(folder,fileNames);
@@ -88,7 +122,8 @@ public class FileFunctions {
 		//Map<String, String> nameFolder = new HashMap<String, String>();
 		for(int i=0;i<fileNames.size();i++){
 			String queryName = fileNames.get(i);
-			String name = queryName.substring(0, queryName.lastIndexOf("\\"));
+			//String name = queryName.substring(0, queryName.lastIndexOf("\\"));
+			String name = queryName.substring(0, kthIndexOf(queryName, '\\', classNameDepth));
 			//String fileName = queryName.substring(0, queryName.lastIndexOf("\\")+1);
 			if(!classMap.containsKey(name)){
 				classMap.put(name, 0);
@@ -102,7 +137,7 @@ public class FileFunctions {
 				String queryName = fileNames.get(i);
 				String NNName = fileNames.get(NNIndex);
 				//System.out.println(queryName+"\n"+NNName+"\n");
-				if(queryName.substring(0,queryName.lastIndexOf("\\")).equals(NNName.substring(0, NNName.lastIndexOf("\\")))){
+				if(queryName.substring(0,kthIndexOf(queryName, '\\', classNameDepth)).equals(NNName.substring(0, kthIndexOf(NNName, '\\', classNameDepth)))){
 					sameClass[i] += 1;
 				}
 			}
@@ -112,7 +147,7 @@ public class FileFunctions {
 		for(int i=0;i<fileNames.size();i++){
 			if(sameClass[i] == 0){
 				String queryName = fileNames.get(i);
-				String className = queryName.substring(0, queryName.lastIndexOf("\\"));
+				String className = queryName.substring(0, kthIndexOf(queryName, '\\', classNameDepth));
 				//String fileName = queryName.substring(0, queryName.lastIndexOf("\\")+1);
 				//TODO class count is not correct, fixed now 1/13/2016
 				
@@ -147,7 +182,7 @@ public class FileFunctions {
 		int total = 0; //compute total number of trees that are in class with size >= 5
 		for(int i=0;i<sameClass.length;i++){
 			String queryName = fileNames.get(i);
-			String name = queryName.substring(0, queryName.lastIndexOf("\\"));
+			String name = queryName.substring(0, kthIndexOf(queryName, '\\', classNameDepth));
 			if(classMap.get(name)>boundary){
 				sum+=sameClass[i]>0?1:0;
 				total++;
