@@ -6,6 +6,7 @@
 
  ./package.py ./my_neurons_123 my_neurons_123.npz
  3) Run neuronplot.py to generate the plots. The first argument is the path to the data archive generated in the previous step, the second is the path to the distance matrix, and the third is the path to the label file. For instance:
+ 
  ./neuronplot.py ./my_neurons_123.npz ./distance_matrix.txt ./labels.txt
  
  Format of the distance matrix: the first line contains 2 integers indicating the dimension of the distance matrix, and the remaining is a N by N distance matrix.
