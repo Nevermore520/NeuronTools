@@ -60,21 +60,21 @@ public class FileFunctions {
 		//String NNCfile = "data/Giorgio_trees reclassed version/output_KNN/dBSum_deltaLinfty_combSum_1NN.txt";
 		//String resultFile = "data/Giorgio_trees reclassed version/classifyResult.txt";
 		
-//		String fileFolder = "data/Zhao_trees/all_cells";
-//		String NNCfile = "data/Zhao_trees/wasserstein_KNN/wasserstein_NNC_10NN.txt";
+//		String cellsFileFolder = "data/Zhao_trees/all_cells";
+//		String kNNfile = "data/Zhao_trees/wasserstein_KNN/zhao_379_10NN.txt";
 //		String resultFile = "data/Zhao_trees/wasserstein_KNN/classifyResult_density.txt";
-//		String fileFolder = "data/Zhao_trees/all_cells";
-//		String NNCfile = "data/Zhao_trees/output/vect_dist_midXY_paper_test_sigma80_5NN.txt";
-//		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
+//		String cellsFileFolder = "data/zhao_trees_test/all_cells";
+//		String kNNfile = "data/zhao_trees_test/knn/distance_matrix_wasserstein_geodesic_straight_line_5nn.txt";
+//		String resultFile = "data/zhao_trees_test/classifyResult_density.txt";
 //		int classNameDepth = 4;
 //		String fileFolder = "data/FourClassDataHippoBreak/";
 //		String NNCfile = "data/FourClassHippoBreakOutput/output_KNN/vect_dist_midXY_paper_test_sigma80_5NN.txt";
 //		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
 //		int classNameDepth = 3;
-//		String fileFolder = "data/Giorgio_1268_inter_principal/all_cells/";
-//		String NNCfile = "data/Giorgio_1268_inter_principal/output/vect_dist_midXY_paper_test_sigma80_5NN.txt";
-//		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
-//		int classNameDepth = 4;
+		String cellsFileFolder = "data/Giorgio_1268_inter_principal/all_cells/";
+		String kNNfile = "data/Giorgio_1268_inter_principal/output/vect_dist_euclidean_L1_sigma10_5NN.txt";
+		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
+		int classNameDepth = 4;
 		//String fileFolder = "data/Giorgio_1268_inter_principal/all_cells";
 		//String NNCfile = "data/Giorgio_1268_inter_principal/wasserstein_KNN/giorgio_1268_inter_principal_10NN.txt";
 		//String resultFile = "data/Giorgio_1268_inter_principal/wasserstein_KNN/classifyResult_density.txt";
@@ -89,11 +89,11 @@ public class FileFunctions {
 //		String NNCfile = "data/FourClassHippoBreakOutput/output_KNN/vect_dist_euclidean_L1_sigma10_5NN.txt";
 //		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
 //		int classNameDepth = 3;
-		String fileFolder = "data/Giorgio_1268_inter_principal/all_cells/";
-		String NNCfile = "data/Giorgio_1268_inter_principal/output/vect_dist_euclidean_L1_sigma10_5NN.txt";
-		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
-		int classNameDepth = 4;
-		FileFunctions.validateSameDirectory(fileFolder, NNCfile, resultFile, classNameDepth);
+//		String cellsFileFolder = "data/Giorgio_1268_inter_principal/all_cells/";
+//		String kNNfile = "data/Giorgio_1268_inter_principal/output/vect_dist_euclidean_L1_sigma10_5NN.txt";
+//		String resultFile = "data/Zhao_trees/output/classifyResult_density.txt";
+//		int classNameDepth = 4;
+		FileFunctions.validateSameDirectory(cellsFileFolder, kNNfile, resultFile, classNameDepth);
 		//String outputFolder = "data/Zhao_trees/NearestTreeFolder/";
 		//copyNearestNeighborFile(fileFolder, NNCfile, outputFolder);
 		//findNearestNeighborName(fileFolder, NNCfile, "28650283.swc");
@@ -110,12 +110,19 @@ public class FileFunctions {
 		return -1;
 	}
 	
-	public static void validateSameDirectory(String fileFolder, String input, String output, int classNameDepth) throws FileNotFoundException, UnsupportedEncodingException{
+	/*
+	 * validateSameDirectory checks how many trees within nearest neighbors of a tree is in the same class.
+	 * cellsFileFolder		path to folder contains all trees
+	 * kNNFile				path to the k nearest neighbor file
+	 * output				path to output file
+	 * classNameDepth		since tree classes are arranged hierarchically (subclasses are in the folder of parent classes), this variable specifies in which level we want to classify the trees.
+	 */
+	public static void validateSameDirectory(String cellsFileFolder, String kNNFile, String output, int classNameDepth) throws FileNotFoundException, UnsupportedEncodingException{
 		List<String> fileNames = new LinkedList<String>();
-		final File folder = new File(fileFolder);
+		final File folder = new File(cellsFileFolder);
 		FileFunctions.listFilesForFolder(folder,fileNames);
 		int[] sameClass = new int[fileNames.size()];
-		List<List<Integer>> nearestNeighborIndex = FileFunctions.readKNNList(input); // index start from 1
+		List<List<Integer>> nearestNeighborIndex = FileFunctions.readKNNList(kNNFile); // index start from 1
 		
 		//use map to save class name
 		Map<String, Integer> classMap = new HashMap<String, Integer>(); // <class name, class size> pair
@@ -176,7 +183,7 @@ public class FileFunctions {
 				System.out.println(i+"\t\t"+bucket[i]);
 			}
 		}
-		// TODO check first to make sure whether to include small size classes!!! Use countLess & boundary var
+		// TODO check first to make sure whether to include small size classes!!! Use boundary var
 		int boundary = 0;
 		int sum = 0;
 		int total = 0; //compute total number of trees that are in class with size >= 5

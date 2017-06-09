@@ -49,7 +49,7 @@ public class FTMain {
 				File next = new File(inputFile);
 				String outputFile = outputFolder + (i + 1) + "_" + next.getName();
 				fileTransfer = new GeodesicFileTransfer(inputFile);
-				fileTransfer.ChangeFileFormat(outputFile);
+				fileTransfer.ChangeFileFormatWithFuncVal(outputFile);
 			}
 		}else if(controller == 1){ // Euclidean distance along neuron tree edges from tree nodes to root
 			System.out.println("Euclidean distance along neuron tree edges from tree nodes to root");
