@@ -150,7 +150,8 @@ vector<vector<double> > vectorFromPersistentDiagramAbs(vector<vector<double> > p
 	double lowBound = 0;
 	double interval = (upBound - lowBound) / (vectLen-1);
 	sigma = 2*sigma*sigma;
-	for(double pos = lowBound; pos <= upBound; pos+=interval){
+	int j = 0;
+	for(double pos = lowBound; j < vectLen; pos+=interval, ++j){
 		double funValue = 0;
 		for(int i = 0; i < persistentDiagram[0].size(); i++){
 			double alpha = fabs(persistentDiagram[1][i] - persistentDiagram[0][i]);
@@ -174,7 +175,8 @@ vector<vector<double> > vectorFromPersistentDiagram(vector<vector<double> > pers
 	double lowBound = 0;
 	double interval = (upBound - lowBound) / (vectLen-1);
 	sigma = 2*sigma*sigma;
-	for(double pos = lowBound; pos <= upBound; pos+=interval){
+	int j = 0;
+	for(double pos = lowBound; j < vectLen; pos+=interval, ++j){
 		double funValue = 0;
 		for(int i = 0; i < persistentDiagram[0].size(); i++){
 			double alpha = persistentDiagram[1][i] - persistentDiagram[0][i];
@@ -272,6 +274,12 @@ void computeDistanceMatrixFromDiagrams(string diagramsFolder, string distanceMat
 		printMat(distanceMatrix, matrix);
 	}else{
 		vector<vector<double> > vectors = diagramsToVectorsAbs(diagrams, vectorLen, sigma, maxRange(diagrams));
+//		for(auto vec : vectors) {
+//			for(auto xi : vec) {
+//				cout << xi << " ";
+//			}
+//			cout << endl;
+//		}
 		vector<vector<double> > matrix = computeDistanceMatrixFromVectors(vectors);
 		printMat(distanceMatrix, matrix);
 	}
@@ -279,8 +287,8 @@ void computeDistanceMatrixFromDiagrams(string diagramsFolder, string distanceMat
 }
 
 int main(int argc, char **argv){
-	string diagramsFolder = "input/data4_dendrites/";
-	string distanceMatrix = "output/data4_dendrites/distances_5.txt";
+	string diagramsFolder = "input/test/";
+	string distanceMatrix = "output/test/distances_1.txt";
 	bool twoVectors = false;
 	computeDistanceMatrixFromDiagrams(diagramsFolder, distanceMatrix, twoVectors);
 }
